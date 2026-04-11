@@ -17,7 +17,7 @@ const PORT = 5000;
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://your-frontend-url.com"],
   credentials: true
 }));
 app.use(express.json());
@@ -45,13 +45,6 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.error("❌ MongoDB connection error:", err.message));
 
-// Test Route
-app.get("/", (req, res) => {
-  res.json({ 
-    message: "Backend is running 🚀",
-    cloudinary: process.env.CLOUDINARY_API_KEY ? "✅ Configured" : "❌ Missing API Key"
-  });
-});
 
 
 app.use("/api/gpa", gpaRoutes);
