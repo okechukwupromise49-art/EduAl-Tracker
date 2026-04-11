@@ -53,9 +53,6 @@ app.get("/", (req, res) => {
   });
 });
 
-console.log(process.env.CLOUDINARY_API_KEY);
-console.log("KEY:", process.env.CLOUDINARY_API_KEY);
-console.log("NAME:", process.env.CLOUDINARY_CLOUD_NAME);
 
 app.use("/api/gpa", gpaRoutes);
 app.use("/api/auth", registerRoutes);
