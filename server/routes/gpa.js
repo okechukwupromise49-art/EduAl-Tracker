@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Gpa = require("../models/Gpa");
+const Gpa = require("../models/gpa");
 const auth = require("../middleware/auth");
 
 
