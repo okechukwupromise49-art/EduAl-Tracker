@@ -61,7 +61,7 @@ export function EditProfile() {
    useEffect(() => {
       async function fetchData() {
     
-        const res = await fetch("http://localhost:5000/api/auth/details", {
+        const res = await fetch(`{import.meta.env.VITE_API_URL}/api/auth/details`, {
            credentials: "include"
         });
     
