@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Eye, EyeOff, LockKeyhole, LogOut } from "lucide-react";
 import { EditProfile } from "./EditProfile";
-import { ThemeContext } from "../../app";
+import { ThemeContext } from "../../App";
 
 export function General() {
   const {theme} = useContext(ThemeContext)
