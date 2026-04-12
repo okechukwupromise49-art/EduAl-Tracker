@@ -69,7 +69,7 @@ export function Application() {
     setmessage('')
     seterrmessage('')
 try{
-   const response =  await fetch(`${API_URL}/api/auth/login`,{
+   const response =  await fetch(`https://edual-tracker.onrender.com/api/auth/login`,{
  method:"POST",
  headers:{
    "Content-Type":"application/json"
