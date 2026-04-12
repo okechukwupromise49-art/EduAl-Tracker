@@ -8,7 +8,7 @@ import {
   ResponsiveContainer
 } from "recharts";
 import { useState, useEffect, useContext } from "react";
-import { ThemeContext } from "./app";
+import { ThemeContext } from "./App";
 
 
 export default function GpaChart() {

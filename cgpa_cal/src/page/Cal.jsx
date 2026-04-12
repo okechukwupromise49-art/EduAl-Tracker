@@ -1,6 +1,6 @@
     import { useState, useEffect, useContext} from "react";
     import {Trash2} from "lucide-react"
-    import { ThemeContext } from "../App";
+    import { ThemeContext } from "../App.jsx";
     
     const grades = {
         A: 5,

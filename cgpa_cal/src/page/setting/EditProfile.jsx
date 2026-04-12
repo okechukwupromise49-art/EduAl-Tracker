@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext} from "react";
 import { Camera, Save, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import {ThemeContext} from "../../App"
+import {ThemeContext} from "../../App.jsx"
 
 export function EditProfile() {
   const {theme} = useContext(ThemeContext)
