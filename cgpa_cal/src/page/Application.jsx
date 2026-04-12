@@ -17,7 +17,7 @@ export function Application() {
   });
   const [message, setmessage] = useState("")
  const [errmessage, seterrmessage] = useState("")
-  const API_URL = "https://edual-tracker.onrender.com "|| 
+  const API_URL = "https://edual-tracker.onrender.com"|| 
   "http://localhost:5000";
 
 
