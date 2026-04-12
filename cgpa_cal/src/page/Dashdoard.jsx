@@ -6,7 +6,7 @@ import { Progress } from "../component/Progress";
 import { useNavigate } from "react-router-dom";     
 import { Predict } from "../component/Predict"
 import { Performance } from "../component/Performance"
-import { ThemeContext } from "../app";
+import { ThemeContext } from "../App";
 
 
 
