@@ -14,6 +14,10 @@ export function EditProfile() {
   const [data, setData] = useState({})
   const [preview, setPreview] = useState(null);
   const inputStyle = " w-full px-4 py-3  rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400transition-all"
+  const API_URL = 
+  import.meta.env.VITE_API_URL ||
+   "http://localhost:5000";
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +37,7 @@ export function EditProfile() {
   console.log("Has file:", !!profilePic);
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/update", {
+    const res = await fetch(`${API_URL}/api/auth/update`, {
       method: "post",
        credentials: "include",
       body: formData,
@@ -61,7 +65,7 @@ export function EditProfile() {
    useEffect(() => {
       async function fetchData() {
     
-        const res = await fetch(`{import.meta.env.VITE_API_URL}/api/auth/details`, {
+        const res = await fetch(`${API_URL}/api/auth/details`, {
            credentials: "include"
         });
     
