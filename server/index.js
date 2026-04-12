@@ -13,8 +13,7 @@ const cgpaRoutes = require("./routes/cgpa");
 const notificationRoutes = require("./routes/notification");
 const cookieParser = require("cookie-parser");
 
-const PORT = 5000;
-
+const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
   origin: ["http://localhost:5173", "https://edu-al-tracker.vercel.app"],
