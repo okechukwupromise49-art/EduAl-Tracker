@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ThemeContext } from "../app";
+import { ThemeContext } from "../App";
 
 
 
