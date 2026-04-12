@@ -8,7 +8,7 @@ import { Predict } from "../component/Predict";
 import GpaChart from "../GpaChart";
 import { Progress } from "../component/Progress";
 import { Performance } from "../component/Performance"
-import { ThemeContext } from "../app";
+import { ThemeContext } from "../App";
 
 
 
