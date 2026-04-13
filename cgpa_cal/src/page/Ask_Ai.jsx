@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import { ThemeContext } from "../App";
 import API_URL from "../Api";
 
+
 export function Ask_Ai() {
   const {theme} = useContext(ThemeContext)
   const [messages, setMessages] = useState([]);
@@ -38,7 +39,7 @@ export function Ask_Ai() {
     ]);
 
     try {
-      const url = `${API_URL}/api/ai/ask-ai`;   // Make sure this matches your route
+      const url = `${API_URL}/api/ai//ask-ai`;   // Make sure this matches your route
 
       const response = await fetch(url, {
         method: "POST",
@@ -54,7 +55,8 @@ export function Ask_Ai() {
       }
 
       const data = await response.json();
-
+      
+        console.log("API URL:", url);
       // Handle both { text: "..." } and possible { error: "..." }
       const aiText = data.text || data.error || "Sorry, no response from AI.";
 
