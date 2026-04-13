@@ -3,6 +3,7 @@ import { Send, Bot, User } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 export function Ask_Ai() {
   const {theme} = useContext(ThemeContext)
@@ -25,55 +26,27 @@ export function Ask_Ai() {
       text: input.trim(),
     };
 
-    // Add user message
     setMessages((prev) => [...prev, userMessage]);
+    const currentInput = input.trim();
     setInput("");
     setIsSending(true);
 
-    // Show loading bubble
     const loadingId = (Date.now() + 1).toString();
     setMessages((prev) => [
       ...prev,
-      {
-        id: loadingId,
-        type: "ai",
-        text: "",
-        isLoading: true,
-      },
+      { id: loadingId, type: "ai", text: "", isLoading: true },
     ]);
 
     try {
-      const API_KEY = "AIzaSyDoyzq5BYreFZwpceh397Hjhv0FlmkKAzw";
-      const MODEL = "gemini-2.5-flash";
-
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
+      const url = `${API_URL}/api/ai/ask-ai`;   // Make sure this matches your route
 
       const response = await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
-          contents: [
-            {
-              role: "user",
-              parts: [{ text: input.trim() }],
-            },
-          ],
-          generationConfig: {
-            temperature: 0.7,
-            topK: 40,
-            topP: 0.95,
-            maxOutputTokens: 1024,
-          },
-          systemInstruction: {
-            parts: [
-              {
-                text: "You are a helpful academic assistant for university students. Answer questions related to education, CGPA, study techniques, course planning, time management, exam preparation, and academic goals. Stay focused on academic topics. Be clear, encouraging, and practical.",
-              },
-            ],
-          },
-        }),
+          messages: currentInput   // ← This now matches backend destructuring
+        })
       });
 
       if (!response.ok) {
@@ -82,11 +55,9 @@ export function Ask_Ai() {
 
       const data = await response.json();
 
-      const aiText =
-        data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "Sorry, I couldn't generate a response. Please try again.";
+      // Handle both { text: "..." } and possible { error: "..." }
+      const aiText = data.text || data.error || "Sorry, no response from AI.";
 
-      // Replace loading message with real answer
       setMessages((prev) =>
         prev.map((msg) =>
           msg.id === loadingId
@@ -95,8 +66,7 @@ export function Ask_Ai() {
         )
       );
     } catch (err) {
-      console.error("Gemini API error:", err);
-
+      console.error("AI request failed:", err);
       setMessages((prev) =>
         prev.map((msg) =>
           msg.id === loadingId

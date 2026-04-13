@@ -9,6 +9,8 @@ import {
 } from "recharts";
 import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "./App";
+import API_URL from "./Api";
+
 
 
 export default function GpaChart() {
@@ -18,7 +20,7 @@ export default function GpaChart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/cgpa/details", {
+        const res = await fetch(`${API_URL}/api/auth/details`, {
            credentials: "include",
         });
         const result = await res.json();

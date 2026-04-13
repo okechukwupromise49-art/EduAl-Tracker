@@ -10,6 +10,8 @@ const app = express();
 const gpaRoutes = require("./routes/gpa");
 const registerRoutes = require("./routes/register");
 const cgpaRoutes = require("./routes/cgpa");
+const aiRoutes = require("./routes/ai");
+
 const notificationRoutes = require("./routes/notification");
 const cookieParser = require("cookie-parser");
 
@@ -53,6 +55,7 @@ app.use("/api/gpa", gpaRoutes);
 app.use("/api/auth", registerRoutes);
 app.use("/api/cgpa", cgpaRoutes);
 app.use("/api/notification", notificationRoutes);
+app.use("/api/ai", aiRoutes);
 
 app.get("/health", (req,res) => {
   res.status(200).send("working fine 👍👍👍👍")
