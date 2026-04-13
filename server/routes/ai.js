@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const fetch = require("node-fetch");
 
 
 router.post('/ask-ai', async (req, res) => {
@@ -16,6 +16,9 @@ router.post('/ask-ai', async (req, res) => {
       console.error("GEMINI_API_KEY is missing in environment variables");
       return res.status(500).json({ error: "Server configuration error" });
     }
+
+    console.log("KEY:", process.env.GEMINI_API_KEY);
+    console.log("PROMPT:", prompt);
 
     const MODEL = "gemini-2.5-flash";   // This is valid in 2026
     

@@ -43,7 +43,7 @@ export function Ask_Ai() {
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include",
+       
         body: JSON.stringify({
           messages: currentInput   // ← This now matches backend destructuring
         })
