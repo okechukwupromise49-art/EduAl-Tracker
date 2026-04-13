@@ -64,6 +64,10 @@ app.get("/health", (req,res) => {
   res.status(200).send("working fine 👍👍👍👍")
 })
 
+app.get("/", (req,res) => {
+  res.status(200).send("working ❤️❤️❤️👍👍👍👍")
+})
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
