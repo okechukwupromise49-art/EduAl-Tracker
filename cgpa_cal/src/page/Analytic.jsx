@@ -9,6 +9,7 @@ import GpaChart from "../GpaChart";
 import { Progress } from "../component/Progress";
 import { Performance } from "../component/Performance"
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 
 
@@ -24,7 +25,7 @@ export function Analytic() {
     async function fetchData() {
       
   
-      const res = await fetch("http://localhost:5000/api/auth/details", {
+      const res = await fetch(`${API_URL}/api/auth/details`, {
         credentials: "include"
       });
   

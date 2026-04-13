@@ -1,6 +1,7 @@
     import { useState, useEffect, useContext} from "react";
     import {Trash2} from "lucide-react"
     import { ThemeContext } from "../App.jsx";
+import API_URL from "../Api.js";
     
     const grades = {
         A: 5,
@@ -39,7 +40,7 @@
    
   
     // 1️⃣ clear previous courses
-  await fetch("http://localhost:5000/api/gpa/reset", {
+  await fetch(`${API_URL}/api/gpa/reset`, {
     method: "DELETE",
    credentials: "include"
   });
@@ -48,7 +49,7 @@
 
   const levelCourses = courses[currentLevel];
   for (const course of levelCourses) {
-    const response = await fetch("http://localhost:5000/api/gpa/add", {
+    const response = await fetch(`${API_URL}/api/gpa/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -126,7 +127,7 @@
 
 const deleteBtn = async (id, index) => {
   try {
-    await fetch(`http://localhost:5000/api/gpa/delete/${id}`, {
+    await fetch(`${API_URL}/api/gpa/delete/${id}`, {
       method: "DELETE",
        credentials: "include"
     });

@@ -7,7 +7,7 @@ const [data1, setData1] = useState({})
   useEffect(() => {
     async function fetchCgpaData() {
   
-      const res = await fetch("http://localhost:5000/api/cgpa/details", {
+      const res = await fetch(`${API_URL}/api/cgpa/details`, {
         credentials: "include"
       });
   

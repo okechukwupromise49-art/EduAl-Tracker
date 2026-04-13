@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Eye, EyeOff, LockKeyhole, LogOut } from "lucide-react";
 import { EditProfile } from "./EditProfile";
 import { ThemeContext } from "../../App";
+import API_URL from "../../Api";
 
 export function General() {
   const {theme} = useContext(ThemeContext)
@@ -32,7 +33,7 @@ export function General() {
   setLoading(true);
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/change-password", {
+    const res = await fetch(`${API_URL}/api/auth/change-password`, {
       method: "PUT",
       credentials: "include",
       headers: {
@@ -63,7 +64,7 @@ export function General() {
   const handleLogout = async () => {
   if (window.confirm("Are you sure you want to logout?")) {
     try {
-      await fetch("http://localhost:5000/api/auth/logout", {
+      await fetch(`${API_URL}/api/auth/logout`, {
         method: "POST",
         credentials: "include"
       });

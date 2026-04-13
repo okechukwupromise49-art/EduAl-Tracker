@@ -12,10 +12,10 @@ export function Predict() {
       try {
 
         const [gpaRes, cgpaRes] = await Promise.all([
-          fetch("http://localhost:5000/api/gpa/addGpa", {
+          fetch(`${API_URL}/api/gpa/addGpa`, {
             credentials: "include"
           }),
-          fetch("http://localhost:5000/api/cgpa/details", {
+          fetch(`${API_URL}/api/cgpa/details`, {
              credentials: "include"
           })
         ]);

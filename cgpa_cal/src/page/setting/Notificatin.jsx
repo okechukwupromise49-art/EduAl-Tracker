@@ -3,6 +3,7 @@ import { ArrowLeft, Inbox, XIcon } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 import { ThemeContext } from "../../App"
+import API_URL from "../../Api"
 
 export function Notification() {
   const {theme} = useContext(ThemeContext)
@@ -16,7 +17,7 @@ export function Notification() {
       try {
         
 
-        const res = await fetch("http://localhost:5000/api/notification/getNotification", {
+        const res = await fetch(`${API_URL}/api/notification/getNotification`, {
           credentials: "include"
         })
 
@@ -37,7 +38,7 @@ export function Notification() {
   try {
     
 
-    const res = await fetch(`http://localhost:5000/api/notification/delete/${id}`, {
+    const res = await fetch(`${API_URL}/api/notification/delete/${id}`, {
       method: "DELETE",
       credentials: "include",
     });
@@ -61,7 +62,7 @@ useEffect(() => {
    async  function fetchData(){
 
     
-    await fetch("http://localhost:5000/api/notification/markAsRead", {
+    await fetch(`${API_URL}/api/notification/markAsRead`, {
       method: "PATCH",
       credentials: "include"
 });

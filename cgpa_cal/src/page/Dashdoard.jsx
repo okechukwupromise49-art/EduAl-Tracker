@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Predict } from "../component/Predict"
 import { Performance } from "../component/Performance"
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 
 
@@ -21,7 +22,7 @@ useEffect(() => {
   async function fetchData() {
     
 
-    const res = await fetch("http://localhost:5000/api/auth/details", {
+    const res = await fetch(`${API_URL}/api/auth/details`, {
        credentials: "include"
     });
 
@@ -40,7 +41,7 @@ useEffect(() => {
    
 
     const res = await fetch(
-      "http://localhost:5000/api/notification/unMarkAsRead",
+      `${API_URL}/api/notification/unMarkAsRead`,
       {
         method: "PATCH",
          credentials: "include"

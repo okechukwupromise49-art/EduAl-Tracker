@@ -2,6 +2,7 @@ import {  Pencil, History, Moon, Key, Bell, Info, Crown, Settings, ArrowLeft, Ch
 import { useNavigate } from "react-router-dom"
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 
 export function Setting(){
@@ -12,7 +13,7 @@ export function Setting(){
       async function fetchData() {
         
     
-        const res = await fetch("http://localhost:5000/api/auth/details", {
+        const res = await fetch(`${API_URL}/api/auth/details`, {
            credentials: "include"
         });
     

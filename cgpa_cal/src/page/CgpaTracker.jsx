@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 export default function CgpaTracker() {
   const {theme, handleTheme} = useContext(ThemeContext)
@@ -53,7 +54,7 @@ const calculateCgpa = () => {
     
 
     const newCgpa = calculateCgpa();
-    const res = await fetch("http://localhost:5000/api/notification/update", {
+    const res = await fetch(`${API_URL}/api/notification/update`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +64,7 @@ const calculateCgpa = () => {
       body: JSON.stringify({ cgpa: Number(newCgpa) })
     });
       
-     await fetch("http://localhost:5000/api/cgpa/reset", {
+     await fetch(`${API_URL}/api/cgpa/reset`, {
     method: "DELETE",
     credentials: "include"
   });
@@ -76,7 +77,7 @@ const calculateCgpa = () => {
 
           if (!course.course || !course.grade || !course.unit) continue;
 
-          await fetch("http://localhost:5000/api/cgpa/add", {
+          await fetch(`${API_URL}/api/cgpa/add`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -108,7 +109,7 @@ const deleteBtn = async (id, level, semester, index) => {
   
 
   try {
-    await fetch(`http://localhost:5000/api/cgpa/delete/${id}`, {
+    await fetch(`${API_URL}/api/cgpa/delete/${id}`, {
       method: "DELETE",
       credentials: "include"
     });

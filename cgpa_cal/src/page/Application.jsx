@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 
 
@@ -17,8 +18,7 @@ export function Application() {
   });
   const [message, setmessage] = useState("")
  const [errmessage, seterrmessage] = useState("")
-  const API_URL = "https://edual-tracker.onrender.com"|| 
-  "http://localhost:5000";
+ 
 
 
   function handleChange(e) {

@@ -1,13 +1,12 @@
 import { Calculator, BarChart3, GraduationCap } from "lucide-react";
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../Api";
 
 function LandingPage() {
   const [isLoading, setIsloading] = useState(false)
   const navigate = useNavigate()
-  const API_URL = import.meta.env.VITE_API_URL || 
-  "http://localhost:5000";
-
+  
 
  useEffect(() => {
   const checkUser = async () => {

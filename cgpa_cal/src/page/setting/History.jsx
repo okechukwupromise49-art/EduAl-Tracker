@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ArrowLeft, Inbox, TrendingUp } from "lucide-react";
 import { ThemeContext } from "../../App";
+import API_URL from "../../Api";
 
 export function History() {
   const {theme} = useContext(ThemeContext)
@@ -13,7 +14,7 @@ export function History() {
     try {
       
 
-      const res = await fetch("http://localhost:5000/api/cgpa/history", {
+      const res = await fetch(`${API_URL}/api/cgpa/history`, {
         credentials: "include",
       });
 

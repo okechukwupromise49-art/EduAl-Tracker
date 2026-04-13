@@ -40,6 +40,8 @@ app.use((err, req, res, next) => {
   });
 });
 
+
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
@@ -51,6 +53,10 @@ app.use("/api/gpa", gpaRoutes);
 app.use("/api/auth", registerRoutes);
 app.use("/api/cgpa", cgpaRoutes);
 app.use("/api/notification", notificationRoutes);
+
+app.get("/health", (req,res) => {
+  res.status(200).send("working fine 👍👍👍👍")
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

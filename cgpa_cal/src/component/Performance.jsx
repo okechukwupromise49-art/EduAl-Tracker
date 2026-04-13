@@ -8,7 +8,7 @@ export function Performance(){
     useEffect(() => {
        async function fetchData(){
             try{
-                const res = await fetch("http://localhost:5000/api/cgpa/history", {
+                const res = await fetch(`${API_URL}/api/cgpa/history`, {
                      credentials: "include",
                     });
                 const result = await res.json()

@@ -19,10 +19,10 @@ const cardStyle = `shadow-lg rounded-2xl p-6 text-center transition transform ho
 
 
     const [gpaRes, cgpaRes] = await Promise.all([
-      fetch("http://localhost:5000/api/gpa/addGpa", {
+      fetch(`${API_URL}/api/gpa/addGpa`, {
         credentials: "include"
       }),
-      fetch("http://localhost:5000/api/cgpa/details", {
+      fetch(`${API_URL}/api/cgpa/details`, {
          credentials: "include"
       })
     ]);
