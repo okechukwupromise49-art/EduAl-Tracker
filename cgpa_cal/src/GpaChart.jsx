@@ -20,7 +20,7 @@ export default function GpaChart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${API_URL}/api/auth/details`, {
+        const res = await fetch(`${API_URL}/api/cgpa/details`, {
            credentials: "include",
         });
         const result = await res.json();

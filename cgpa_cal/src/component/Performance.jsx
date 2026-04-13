@@ -25,7 +25,7 @@ export function Performance(){
     }, [])
     return(
         <div>
-             <h3 className="text-xl font-bold mt-8 mb-5">
+             <h3 className="text-xl ml-2 font-bold mt-8 mb-5">
                   Academic Performance 
                 </h3>
                 <div className="grid grid-cols-2 gap-5">

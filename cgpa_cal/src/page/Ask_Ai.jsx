@@ -72,7 +72,7 @@ export function Ask_Ai() {
           msg.id === loadingId
             ? {
                 ...msg,
-                text: "Sorry — there was an error connecting to the AI. Please try again later.",
+                text: "Sorry - there was an error connecting to the AI. Please try again later.",
                 isLoading: false,
               }
             : msg
