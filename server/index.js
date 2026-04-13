@@ -12,9 +12,12 @@ const registerRoutes = require("./routes/register");
 const cgpaRoutes = require("./routes/cgpa");
 const aiRoutes = require("./routes/ai");
 
+
+
 const notificationRoutes = require("./routes/notification");
 const cookieParser = require("cookie-parser");
 
+console.log(aiRoutes)
 const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
@@ -60,6 +63,7 @@ app.use("/api/ai", aiRoutes);
 app.get("/health", (req,res) => {
   res.status(200).send("working fine 👍👍👍👍")
 })
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
