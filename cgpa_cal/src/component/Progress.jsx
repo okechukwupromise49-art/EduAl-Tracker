@@ -1,5 +1,6 @@
  import { useEffect,useContext, useState } from "react";
  import { ThemeContext } from "../App";
+import API_URL from "../Api";
  export function Progress(){
   const {theme, handleTheme} = useContext(ThemeContext)
 const [data1, setData1] = useState({})

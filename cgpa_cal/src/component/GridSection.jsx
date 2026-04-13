@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { ThemeContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../Api";
 
 
 export function GridSection(){

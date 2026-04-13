@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react"
 import { ThemeContext } from "../App";
+import API_URL from "../Api";
 
 export function Performance(){
     const {theme, handleTheme} = useContext(ThemeContext)
