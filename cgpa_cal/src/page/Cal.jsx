@@ -175,7 +175,7 @@ const deleteBtn = async (id, index) => {
                 <input
                 type="text"
                 placeholder="Course"
-                className={`  rounded px-2 py-1 flex-1  
+                className={`  rounded px-2 py-1 flex-1 w-24  
                   ${theme === "dark" ? 
                     "bg-gray-800 border border-2 border-gray-900 text-white"
                     : "bg-white text-black border border-gray-300"}`}
