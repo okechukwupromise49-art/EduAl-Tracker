@@ -147,7 +147,7 @@ const deleteBtn = async (id, index) => {
 };
 
     return (
-        <div className={`shadow-lg max-w-lg mx-auto p-6 mt-10 rounded-lg
+        <div className={`shadow-lg  mx-auto p-6 mt-10 rounded-lg
          ${theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
         <div className="text-center mb-4">
             <h1 className="text-2xl font-bold text-blue-500">GPA Calculator</h1>
