@@ -134,7 +134,7 @@ useEffect(() => {
               
 
               {/* CENTER (SEARCH) */}
-              <div className= {`shadow-xl w-9/12  flex items-center p-2 rounded-md ${theme === "dark" ? "bg-gray-700" : "bg-gray-200 text-black"} `}>
+              <div className= {`shadow-xl w-9/12 hidden md:block flex items-center p-2 rounded-md ${theme === "dark" ? "bg-gray-700" : "bg-gray-200 text-black"} `}>
               <Search size={20} className="text-blue-500 mr-2" />
               <input
                   type="text"
