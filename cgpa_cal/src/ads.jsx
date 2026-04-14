@@ -12,7 +12,7 @@ const BottomAd = () => {
       position: "fixed",
       bottom: 0,
       width: "100%",
-      height: "60px",
+      height: "30px",
       background: "#fff",
       textAlign: "center",
       zIndex: 9999
