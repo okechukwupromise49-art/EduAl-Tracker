@@ -20,7 +20,7 @@ const BottomAd = () => {
       
 
       <ins className="adsbygoogle"
-     style={{display:'block'}}
+     style={{ display: "inline-block", width: "320px", height: "50px" }}
      data-ad-client="ca-pub-6692275181062955"
      data-ad-slot="6111228373"
      data-ad-format="auto"
