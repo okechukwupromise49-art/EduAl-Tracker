@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../App";
 import API_URL from "../Api";
+import BottomAd from "../ads";
 
 
 
@@ -280,7 +281,7 @@ catch(err){
         
       </form> 
        }
-      
+      <BottomAd/>
     </div>
   );
 }

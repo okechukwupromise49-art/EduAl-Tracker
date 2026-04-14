@@ -2,6 +2,7 @@ import { Calculator, BarChart3, GraduationCap } from "lucide-react";
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API_URL from "../Api";
+import BottomAd from "../ads";
 
 function LandingPage() {
   const [isLoading, setIsloading] = useState(false)
@@ -118,7 +119,7 @@ function LandingPage() {
           Start Tracking Now
         </button>
       </div>
-
+        <BottomAd/>
     </div>
   );
 }

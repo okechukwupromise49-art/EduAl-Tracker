@@ -8,6 +8,7 @@ import { Predict } from "../component/Predict"
 import { Performance } from "../component/Performance"
 import { ThemeContext } from "../App";
 import API_URL from "../Api";
+import BottomAd from "../ads";
 
 
 
@@ -246,7 +247,7 @@ useEffect(() => {
     <Performance/>
    
               </div>
-              
+              <BottomAd/>
               <button 
           className="fixed  bottom-4 right-4 bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-800"
 
