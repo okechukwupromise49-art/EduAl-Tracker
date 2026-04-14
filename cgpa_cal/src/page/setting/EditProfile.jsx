@@ -185,7 +185,7 @@ export function EditProfile() {
                 transition-all shadow-md
               "
             >
-              <Save size={18} />
+              <Save className="hidden md:block" size={18} />
               Save Changes
             </button>
 
