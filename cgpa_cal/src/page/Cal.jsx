@@ -147,7 +147,7 @@ const deleteBtn = async (id, index) => {
 };
 
     return (
-        <div className={`shadow-lg  mx-auto p-6 mt-10 rounded-lg
+        <div className={`shadow-lg  p-6 mt-10 rounded-lg
          ${theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
         <div className="text-center mb-4">
             <h1 className="text-2xl font-bold text-blue-500">GPA Calculator</h1>
@@ -175,7 +175,7 @@ const deleteBtn = async (id, index) => {
                 <input
                 type="text"
                 placeholder="Course"
-                className={` rounded px-2 py-1 flex-1  
+                className={`  rounded px-2 py-1 flex-1  
                   ${theme === "dark" ? 
                     "bg-gray-800 border border-2 border-gray-900 text-white"
                     : "bg-white text-black border border-gray-300"}`}
