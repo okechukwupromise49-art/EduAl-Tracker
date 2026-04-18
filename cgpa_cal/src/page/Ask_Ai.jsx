@@ -39,7 +39,7 @@ export function Ask_Ai() {
     ]);
 
     try {
-      const url = `${API_URL}/api/ai//ask-ai`;   // Make sure this matches your route
+      const url = `${API_URL}/api/ai/ask-ai`;   // Make sure this matches your route
 
       const response = await fetch(url, {
         method: "POST",

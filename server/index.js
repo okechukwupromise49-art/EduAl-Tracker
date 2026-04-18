@@ -17,7 +17,7 @@ const aiRoutes = require("./routes/ai");
 const notificationRoutes = require("./routes/notification");
 const cookieParser = require("cookie-parser");
 
-console.log(aiRoutes)
+
 const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
