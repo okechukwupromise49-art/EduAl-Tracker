@@ -65,7 +65,7 @@ export function Predict() {
         </h1>
 
         <h2 className="text-md mt-2">
-  You need tp maintain{" "}
+  You need to maintain{" "}
   <span className="font-bold text-xl text-green-600">
     {cgpaData?.neededForSecondClass}
   </span>{" "}
